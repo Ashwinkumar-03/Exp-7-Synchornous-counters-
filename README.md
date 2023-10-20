@@ -62,16 +62,16 @@ RegisterNumber:  212222240013
 
 ## up counter
 ```
-module proj6counters(D,C,B,A,clk);
-output reg D,C,B,A;
+module proj6up(clk,a);
 input clk;
+output reg[3:0]a;
 always@(posedge clk)
-begin 
-D=(C&B&A)^D;
-C=(B&A)^C;
-B=(A^B);
-A=1^A;
-end 
+begin
+a[3]=(a[2] & a[1] & a[0]) ^ a[3];
+a[2]=(a[1] & a[0]) ^ a[2];
+a[1]=(a[0] ^ a[1]);
+a[0]=1 ^ a[0];
+end
 endmodule
 ```
 
@@ -81,16 +81,14 @@ endmodule
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 
 # up counter
-![image](rtl_up.png)
-
+![image](rtl.png)
 
 
 ### TIMING DIGRAMS FOR COUNTER  
 
 # up counter
 
-![image](wf_up.png)
-
+![image](wf.png)
 
 
 
