@@ -75,28 +75,51 @@ end
 endmodule
 ```
 
-
+## up counter
+```
+module downcounter(clk,a);
+input clk;
+output reg[3:0]a;
+always@(posedge clk)
+begin
+a[3]=(~a[2] & ~a[1] & ~a[0])^ a[3];
+a[2]=(~a[1] & ~a[0]) ^ a[2];
+a[1]=(~a[0] ^ a[1]);
+a[0]=1 ^ a[0];
+end
+endmodule
+```
 
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 
-# up counter
+### up counter
 ![image](rtl.png)
+
+### down counter
+![245035371-c216fe7e-bf7b-4aba-89a8-8ba0791ddf30](https://github.com/Ashwinkumar-03/Exp-7-Synchornous-counters-/assets/118663725/85cb67db-6790-4ea5-900f-2d512e7daaea)
 
 
 ### TIMING DIGRAMS FOR COUNTER  
 
-# up counter
-
+### up counter
 ![image](wf.png)
 
+### down counter
+![245035473-bd5bf619-4ffd-4e0f-adee-2e1113f28b66](https://github.com/Ashwinkumar-03/Exp-7-Synchornous-counters-/assets/118663725/9e24fb43-577e-4536-8727-6aaf29f25de0)
 
 
 ### TRUTH TABLE 
 
+### up counter
+![245035516-7a81a71c-0da6-4e4c-b211-e80894c01208](https://github.com/Ashwinkumar-03/Exp-7-Synchornous-counters-/assets/118663725/602ec69b-a113-4e7d-9d55-11b54ae97bc3)
+
+### down counter
+![245036438-0e355822-21c9-471a-8990-82f75edc2feb](https://github.com/Ashwinkumar-03/Exp-7-Synchornous-counters-/assets/118663725/672994d7-88d6-4317-b497-c22acea962e3)
 
 
 
 
 
 ### RESULTS 
+Thus Synchornous counters up counter and down counter circuit are studied and the truth table for different logic gates are verified.
