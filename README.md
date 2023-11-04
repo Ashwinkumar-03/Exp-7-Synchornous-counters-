@@ -78,9 +78,9 @@ end
 endmodule
 ```
 
-## up counter
+## DOWN counter
 ```
-module downcounter(clk,a);
+module proj6down(clk,a);
 input clk;
 output reg[3:0]a;
 always@(posedge clk)
